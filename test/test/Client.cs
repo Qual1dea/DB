@@ -14,16 +14,7 @@ namespace test
         public  string Address { get; set; }
         public  bool IsActive { get; set; }
         public  List<int> DecimalList { get; set; } // []=>List
-    }
-
-    //public class Client
-    //{
-    //    public string IdClient { get; set; }
-    //    public string Name { get; set; }
-    //    public string Address { get; set; }
-    //    public bool IsActive { get; set; }
-    //    public List<int> DecimalList { get; set; } // []=>List
-    //}
+    }
 
     //через static,ArrayList
     //public class Client
