@@ -8,7 +8,7 @@ namespace test
 {
     public class Order
     {
-        public string IdOrder { get; set; }
+        public int IdOrder { get; set; }
         public int IdClient { get; set; }
         public bool IsDelivered { get; set; }
         public int Price { get; set; }
