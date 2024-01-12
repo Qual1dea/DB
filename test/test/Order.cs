@@ -9,7 +9,7 @@ namespace test
     public class Order
     {
         public string IdOrder { get; set; }
-        public string IdClient { get; set; }
+        public int IdClient { get; set; }
         public bool IsDelivered { get; set; }
         public int Price { get; set; }
         public decimal[] Decimal { get; set; }
