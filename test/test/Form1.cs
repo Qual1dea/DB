@@ -42,10 +42,10 @@ namespace test
             SuccessfulWork.ClientsList = new List<Client>();
 
             // Пример добавления клиентов и заказов
-            Client client1 = new Client { IdClient = "1", Name = "Руслан", Address = " Уродсвк", IsActive = true, DecimalList = new List<int> {100, 300, 200 }};
-            Client client2 = new Client { IdClient = "2", Name = "Антон", Address = " Красивск", IsActive = false, DecimalList = new List<int> {200, 600, 400 }};
-            Order order1 = new Order { IdOrder = "O1", IdClient = "1", IsDelivered = true, Price = 1000, Decimal = new decimal[] {200,300000,100}};
-            Order order2 = new Order { IdOrder = "O2", IdClient = "2", IsDelivered = true, Price = 2000, Decimal = new decimal[] {400,600000,200}};
+            Client client1 = new Client { IdClient = 1, Name = "Руслан", Address = " Уродсвк", IsActive = true, DecimalList = new List<int> {100, 300, 200 }};
+            Client client2 = new Client { IdClient = 2, Name = "Антон", Address = " Красивск", IsActive = false, DecimalList = new List<int> {200, 600, 400 }};
+            Order order1 = new Order { IdOrder = 1, IdClient = 1, IsDelivered = true, Price = 1000, Decimal = new decimal[] {200,300000,100}};
+            Order order2 = new Order { IdOrder = 2, IdClient = 2, IsDelivered = true, Price = 2000, Decimal = new decimal[] {400,600000,200}};
 
             //SuccessfulWork.ClientsList = new ArrayList();    //arraylist через public
             //SuccessfulWork.OrdersList = new ArrayList();     //arraylist через public
@@ -59,10 +59,14 @@ namespace test
         private void button1_Click(object sender, EventArgs e)
         {
             string userInput = textBox1.Text;
-
+             if (int.TryParse(userInput, out int clientId))
+                 {
             //List -// Выбор главного объекта по ключу, введенному в TextBox
             var selectedClient = SuccessfulWork.ClientsList
-                .FirstOrDefault(c => c.IdClient == userInput);
+                .FirstOrDefault(c => c.IdClient == clientId);
+        //через string? если idCLient и т.п.
+          //  var selectedClient = SuccessfulWork.ClientsList
+          //     .FirstOrDefault(c => c.IdClient == userInput);
 
             //Arraylist -// Выбор главного объекта по ключу, введенному в TextBox
             // var selectedClient = SuccessfulWork.ClientsList
@@ -107,6 +111,7 @@ namespace test
 
                 label2.Text = $"Сумма логических значений IsDelivered: {sumOfLogicalValues}";
             }
+        }
         }
     }
 }
